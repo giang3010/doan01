@@ -101,17 +101,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 
 			<li class="grid"><a class="color2" href="#">NỮ</a>
 				<div class="megapanel">
+					
 					<div class="row">
 						<div class="col1">
 							<div class="h_nav">
 								<h4>a</h4>
 								<ul>
-									<li><a href="women.html">new arrivals</a></li>
-									<li><a href="women.html">men</a></li>
-									<li><a href="women.html">women</a></li>
-									<li><a href="women.html">accessories</a></li>
-									<li><a href="women.html">kids</a></li>
-									<li><a href="women.html">brands</a></li>
+								{% for item in itemdm %}														
+									<li><a href="">{{item.TenDM}}</a></li>
+								{% endfor %}
 								</ul>	
 							</div>							
 						</div>

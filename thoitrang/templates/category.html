@@ -131,10 +131,10 @@
 		<!-- grids_of_4 -->
 		
 		<div class="grids_of_4">
-			{% for item in itemsp %}
-						
+		
+			{% for item in itemsp %}				
 		  	<div class="grid1_of_4">
-				<div class="content_box"><a href="{% url 'details' %}">
+				<div class="content_box"><a href="details/{{item.MASP}}">
 			   	   	 <img src="{{item.Hinhanh.url}}" class="img-responsive" alt=""/>
 				   	  </a>
 				    <h4><a href="details/{{item.MASP}}"> {{item.TenSP}}</a></h4>

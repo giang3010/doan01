@@ -20,15 +20,26 @@ def category(request):
     itemsp = SANPHAM.objects.all()
     return render(request, 'category.html',{'itemsp':itemsp})
 
-def details(request,id_sanpham):
-    try:
-        sanpham = SANPHAM.objects.get(pk = id_sanpham)
-    except SANPHAM.DoesNotExist:
-        raise Http404("Lỗi")
+def category_details(request,id_sanpham):
+    sanpham = SANPHAM.objects.get(pk = id_sanpham)
     return render(request, 'details.html',{'sanpham': sanpham})
 
+def details(request,id_sanpham):
+    if id_sanpham:
+        # try:    
+        sanpham = SANPHAM.objects.get(pk = id_sanpham)
+        # except SANPHAM.DoesNotExist:
+        #     raise Http404("Lỗi")
+        return render(request, 'details.html',{'sanpham': sanpham})
+    else:
+        return render(request, 'details.html',{})
+    
+def view_details(request):
+        return render(request, 'details.html',{})
+
 def base(request):
-    itemdm = DANHMUC_SP.objects.all()
+    itemdm = DANHMUC_SP.objects.filter(MaNhom=1)
+    print(itemdm.TenDM)
     itemnhom = NHOM_SP.objects.all()
     context = {
         'itemdm' : itemdm,

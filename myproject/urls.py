@@ -20,6 +20,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('thoitrang.urls')),
     path('taikhoan/',include('taikhoan.urls')),
+    
 ]
  
 
